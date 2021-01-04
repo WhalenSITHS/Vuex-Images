@@ -11,7 +11,7 @@
 export default {
   computed: {
     userImages() {
-      return this.$store.state.uploads;
+      return this.$store.state.uploads.uploads;
     },
   },
 };
