@@ -7,3 +7,9 @@ export const state = {
   ],
   currentUser: "",
 };
+
+export const mutations = {
+  changeUser(state, payload) {
+    state.currentUser = payload;
+  },
+};

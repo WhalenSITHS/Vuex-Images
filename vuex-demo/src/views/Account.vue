@@ -1,12 +1,12 @@
 <template>
   <v-container fluid>
-    <v-layout row wrap align-center>
+    <v-layout row wrap align-center justify-space-around>
       <v-flex xs6>
-        <h2>{{ accounts[0].userName }}</h2>
+        <h2>Welcome {{ currentUser }}</h2>
       </v-flex>
-      <v-flex xs6>
+      <v-flex xs4>
         <v-select
-          @change="test"
+          @change="signIn"
           v-model="user"
           :items="accounts"
           item-text="userName"
@@ -33,10 +33,16 @@ export default {
     test: function(user) {
       alert(user);
     },
+    signIn: function(user) {
+      this.$store.commit("changeUser", user);
+    },
   },
   computed: {
     accounts() {
       return this.$store.state.users.accounts;
+    },
+    currentUser() {
+      return this.$store.state.users.currentUser;
     },
   },
 };
