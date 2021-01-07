@@ -2,7 +2,7 @@ export const state = {
   uploads: [
     {
       url:
-        "https://cdn.pixabay.com/photo/2020/12/20/10/01/advent-5846564_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2020/12/29/10/07/coast-5870088_1280.jpg",
       author: "Mike",
     },
     {
@@ -17,7 +17,7 @@ export const state = {
     },
     {
       url:
-        "https://cdn.pixabay.com/photo/2019/03/15/09/49/girl-4056684_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
       author: "Ninja",
     },
   ],

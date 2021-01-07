@@ -1,17 +1,20 @@
 <template>
   <div class="home">
-    <UserImages />
+    <!-- <UserImages /> -->
+    <TestImages />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import UserImages from "@/components/UserImages.vue";
+//import UserImages from "@/components/UserImages.vue";
+import TestImages from "@/components/TestImages.vue";
 
 export default {
   name: "Home",
   components: {
-    UserImages,
+    //UserImages,
+    TestImages,
   },
 };
 </script>
