@@ -1,13 +1,10 @@
 <template>
-  <v-form>
+  <v-form @submit.prevent="uploadImage">
+    <h2>{{ imageURL }}</h2>
     <v-container>
       <v-row>
         <v-col cols="12" md="4">
-          <v-text-field
-            label="Image URL"
-            v-model="imageURL"
-            required
-          ></v-text-field>
+          <v-text-field label="Image URL" id="imageURL" required></v-text-field>
           <v-btn class="mr-4" type="submit"> submit </v-btn>
         </v-col>
       </v-row>
@@ -20,18 +17,18 @@ export default {
   name: "Upload.vue",
   data() {
     return {
-      imageURL: "",
+      //imageURL: "",
       newImage: {},
     };
   },
   methods: {
-    uploadImage: function (imageURL, author) {
+    uploadImage: function (submitEvent) {
       const newImage = {
-        url: imageURL,
-        author: this.$store.state.users.currentUser,
+        url: submitEvent.target.elements.imageURL.value,
+        author: "Mike",
       };
 
-      this.store.commit("uploadImage", newImage);
+      this.$store.commit("uploadImage", newImage);
     },
   },
   computed: {
