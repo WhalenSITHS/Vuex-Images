@@ -1,7 +1,6 @@
 <template>
   <v-form>
     <v-container>
-      <h2>{{ imageURL }}</h2>
       <v-row>
         <v-col cols="12" md="4">
           <v-text-field
@@ -21,10 +20,25 @@ export default {
   name: "Upload.vue",
   data() {
     return {
-      imageURL: "harry",
+      imageURL: "",
+      newImage: {},
     };
   },
-  methods: {},
+  methods: {
+    uploadImage: function (imageURL, author) {
+      const newImage = {
+        url: imageURL,
+        author: this.$store.state.users.currentUser,
+      };
+
+      this.store.commit("uploadImage", newImage);
+    },
+  },
+  computed: {
+    currentUser() {
+      return this.$store.state.users.currentUser;
+    },
+  },
 };
 </script>
 

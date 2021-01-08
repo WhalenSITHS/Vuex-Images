@@ -22,3 +22,9 @@ export const state = {
     },
   ],
 };
+
+export const mutations = {
+  uploadImage(state, payload) {
+    state.uploads.push(payload);
+  },
+};
