@@ -25,7 +25,7 @@ export default {
     uploadImage: function (submitEvent) {
       const newImage = {
         url: submitEvent.target.elements.imageURL.value,
-        author: "Mike",
+        author: this.$store.state.users.currentUser,
       };
 
       this.$store.commit("uploadImage", newImage);
